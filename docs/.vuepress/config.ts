@@ -17,23 +17,33 @@ export default {
   //   },
   // },
   lang: 'zh-CN',
-  title: 'Docs',
-  // description: '这是我的第一个 VuePress 站点',
+  title: '大道 Docs',
+  description: null,
+  // public: '/public',
+  // base:'/cordova',
   theme: defaultTheme({
     colorModeSwitch: true,
-    // Public 文件路径
     // logo: '/images/logo.jpg',// 'https://vuejs.org/images/logo.png',
     // logoDark:'',
-    repo: 'git@39.104.63.170:IOLOII/docs.git',
+    repo: 'http://39.104.63.170:8099/IOLOII/docs',
     repoLabel: 'GitLab 仓库',
-    locales: {
-      '/': {
-        selectLanguageName: 'English',
-      },
-      '/zh/': {
-        selectLanguageName: '简体中文',
-      },
-    },
+
+    docsRepo: 'http://39.104.63.170:8099/IOLOII/docs',
+    docsBranch: 'master',
+    docsDir: 'docs',
+    editLinkPattern: ':repo/edit/:branch/:path',
+    sidebarDepth: 3,
+    lastUpdatedText: '最后一次修改于',
+    contributorsText: '贡献者',
+    editLinkText: '编辑此页',
+    // locales: {
+    //   '/': {
+    //     selectLanguageName: 'English',
+    //   },
+    //   '/zh/': {
+    //     selectLanguageName: '简体中文',
+    //   },
+    // },
     navbar: [
       // 嵌套 Group - 最大深度为 2
       // {
@@ -48,7 +58,7 @@ export default {
       // 控制元素何时被激活
       {
         text: 'Cordova',
-        link: '/',
+        // link: '/cordova',
         // 该元素将一直处于激活状态
         // activeMatch: '/',
         children: [

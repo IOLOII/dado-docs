@@ -1,10 +1,11 @@
 
-  # 基本使用
-  ## 发布release与配置
+# Cordova
+Demo项目：[Cordova-demo](http://39.104.63.170:8099/IOLOII/cordova-demo)
+## 基本使用
+  ### （目前用不上）发布release与配置
   cordova run android --release -- --keystore=../my-release-key.keystore --storePassword=password --alias=alias_name --password=password
 
-
-  ### 生成keytool
+  ### （目前用不上）生成keytool
   ```shell
     keytool -genkey -v -keystore roadapp-release.keystore -alias roadApp -keyalg RSA -validity 4000
   ```
@@ -18,33 +19,7 @@
 
   秘钥：123456
 
-  ### 签名：
-  ```shell
-  jarsigner -verbose -keystore roadapp-release.keystore -signedjar MF.apk app-release.aab roadApp
-  ```
-  roadapp-release.keystore 秘钥文件
-  app-release.aab 未签名目录下的文件名
-  roadApp 别名
-  MF.apk 签名后的名称
-
-  ## 发布release与配置
-  cordova run android --release -- --keystore=../my-release-key.keystore --storePassword=password --alias=alias_name --password=password
-
-  ### 生成keytool
-  ```shell
-    keytool -genkey -v -keystore roadapp-release.keystore -alias roadApp -keyalg RSA -validity 4000
-  ```
-  （执行命令之后会提示你输入密码，设置一些公司名称之类的，密码要记住，其他随意）
-
-  roadapp-release.keystore ：签名文件的名称（左边一个空格）
-
-  roadApp ：签名文件的别名（左右一个空格）
-
-  4000：有效天数
-
-  秘钥：123456
-
-  ### 签名：
+  ### （目前用不上）签名：
   ```shell
   jarsigner -verbose -keystore roadapp-release.keystore -signedjar MF.apk app-release.aab roadApp
   ```
@@ -64,18 +39,18 @@
    SHA1: 8D:32:7F:E7:8B:B2:1E:68:C3:06:C4:80:A8:C5:FC:1D:6B:A8:13:D3
    SHA256: 9C:8C:72:15:29:D2:EF:8F:F4:4E:12:DD:EA:B3:80:D1:27:EC:E1:DD:86:F4:7B:C4:B9:F6:A9:A4:CF:4C:7A:10
 
-# 插件安装
-## 定位插件 cordova-plugin-gaodelocation-chenyu
+## 插件安装
+### 定位插件 cordova-plugin-gaodelocation-chenyu
 > ff8949d957801603ee7279ab88bdaac5 账号为135****4429 分属公路app应用下
 ```shell
-# install
-# cordova plugin add cordova-plugin-gaodelocation-chenyu --variable  ANDROID_API_KEY=ff8949d957801603ee7279ab88bdaac5
+## install
+## cordova plugin add cordova-plugin-gaodelocation-chenyu --variable  ANDROID_API_KEY=ff8949d957801603ee7279ab88bdaac5
 cordova plugin add cordova-plugin-gaodelocation-chenyu --variable  ANDROID_API_KEY=
 ```
 <!-- cordova plugin add https://github.com/waliu/cordova-plugin-gaodelocation-chenyu  --variable  ANDROID_API_KEY=ff8949d957801603ee7279ab88bdaac5
 npm install --save @ionic-native/gao-de-location -->
 
-## AmapTrackPlugin 已弃用 下方仅做了解
+### （已弃用）AmapTrackPlugin 下方仅做了解
 ~~高德猎鹰插件 https://gitee.com/wlyer/AmapTrackPlugin~~
 AmapTrackPlugin-master
 1. 申请Web服务API KEY: `dc646e461029ade1b010eae77bf0dfd8`
@@ -83,9 +58,9 @@ AmapTrackPlugin-master
   https://tsapi.amap.com/v1/track/terminal/add
   "name": "公路app猎鹰",
   "sid": `866078`
-### 安装
+#### 安装
 > cordova plugin add ./additional/AmapTrackPlugin-master
-### 配置
+#### 配置
 ```xml
 <platform name="android">
   <config-file target="AndroidManifest.xml" parent="/manifest/application" mode="merge">
@@ -118,8 +93,8 @@ AmapTrackPlugin-master
 
 
 
-## 权限插件使用
-1. 在config.xml文件中设置需要使用到的权限 [issues](https://github.com/NeoLSN/cordova-plugin-android-permissions/issues/73#issuecomment-535815058)
+### 权限插件使用
+1. 在config.xml文件中设置需要使用到的权限 [issues](https://github.com/NeoLSN/cordova-plugin-android-permissions/issues/73##issuecomment-535815058)
 2. 使用cordova-plugin-android-permissions 插件校验权限 申请权限
 
 ### 关于权限
@@ -169,15 +144,9 @@ android.permission.READ_EXTERNAL_STORAGE   访问您设备上的照片、媒体�
 > [权限参照](https://developer.android.com/reference/android/Manifest.permission)
 
 
-
-
-
-
-
-
-
-# 问题记录
-## Could not find method leftShift() for arguments [dev_build_extras_bfw7hxbiphfvf2wlbp02s8oxb\$_run_closure1\$_closure4@455ef480] on task ':app:cdvCreateAssetManifest' of type org.gradle.api.DefaultTask.
+## 问题记录
+### line32 cdvCreateAssetManifest
+Error: Could not find method leftShift() for arguments [dev_build_extras_bfw7hxbiphfvf2wlbp02s8oxb\$_run_closure1\$_closure4@455ef480] on task ':app:cdvCreateAssetManifest' of type org.gradle.api.DefaultTask.
 
 > https://blog.csdn.net/xiaopangcame/article/details/115543966
 ![1672977879381](image/cordova/1672977879381.png)
@@ -192,7 +161,7 @@ cordova plugin add cordova-plugin-code-push@latest
 通过卸载旧版cordova-plugin-code-push 与相关的其他包后重新安装
 code-push  cordova-plugin-file-transfer  cordova-plugin-file  cordova-plugin-compat cordova-plugin-zip -->
 
-## 无法定位问题
+### 无法定位问题
 > Q: https://github.com/apache/cordova-plugin-geolocation/issues/255
 > I'm using this plugin instead:
 > cordova plugin add https://github.com/ToniKorin/cordova-plugin-location-provider.git
@@ -202,7 +171,7 @@ code-push  cordova-plugin-file-transfer  cordova-plugin-file  cordova-plugin-com
 > > 来自github https://github.com/apache/cordova-plugin-geolocation/issues/255#issuecomment-1325908536
 
 
-## 警告过时api问题- 无关紧要可以忽略
+### 警告过时api问题- 无关紧要可以忽略
 项目根目录下 build.gradle中增加内容
 ```java
     // add
@@ -221,14 +190,14 @@ app/build.gradle中增加
 ```
 ![1672892269035](image/cordova/1672892269035.png)
 
-## UnhandledPromiseRejectionWarning:
+### UnhandledPromiseRejectionWarning
 环境：
 cordova:8.0.0
 <engine name="android" spec="7.0.0" />
 问题原因: Android版本问题
 更换为Android6
 
-## cordova couldn't send request
+### cordova couldn't send request
 
 安卓9.0之后出于安全考虑，默认只使用https的方式发送，除非由开发设置
 解决：
@@ -241,7 +210,7 @@ cordova:8.0.0
 参见：[networkerror](#networkerror)
 
 
-## networkerror
+### networkerror
 > ***Android9.0不再支持http**
 
 解决：
@@ -261,34 +230,24 @@ cordova:8.0.0
   <preference name="scheme" value="https">
   <preference name="hostname" value="127.0.0.1">
 ``` -->
-
-## 已测有效使用cordova-plugin-code-push 插件的环境
-```code
-$ cordova -v
-11.0.0
-
-$ npm -v
-6.14.17
-
-$ node -v
-v14.20.0
-
-$ cordova platform ls
-Installed platforms:
-  android 9.1.0
+```xml
+  <platform name="android">
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+      <application android:usesCleartextTraffic="true" />
+    </edit-config>
+  </platform>
 ```
 
-
-## ~~关于如何使用 cordova-custom-config~~
+### ~~关于如何使用 cordova-custom-config~~
 demo: https://github.com/dpa99c/cordova-custom-config-example/blob/master/config.xml#L5
 
-## Could not dispatch a message to the daemon
+### Could not dispatch a message to the daemon
 内存不足
 
-## 当新建项目 使用第三方脚本 加载报错 Refused to load the script *** 时
+### 当新建项目 使用第三方脚本 加载报错 Refused to load the script *** 时
 注释掉 `<meta http-equiv ** >`
 
-## URL blocked by whitelist
+### URL blocked by whitelist
 安装插件 cordova plugin add cordova-plugin-whitelist
 配置config.xml `<access origin="*" />`
 
@@ -300,7 +259,7 @@ demo: https://github.com/dpa99c/cordova-custom-config-example/blob/master/config
 ![1673332590110](image/cordova/1673332590110.png)
 
 
-## android.useAndroidX
+### android.useAndroidX
 > Execution failed for task ':app:mergeDebugResources'. This project uses AndroidX dependencies, but the 'android.useAndroidX' property is not enabled. Set this property to true in the gradle.properties file and retry.
 
 解决办法：
@@ -315,7 +274,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 
 
-## :app:cdvCreateAssetManifest
+### :app:cdvCreateAssetManifest
 FAILURE: Build failed with an exception.
 * Where:
 Script 'D:\program\workspace\Other\cordova-codepush\permission-http-9\platforms\android\cordova-plugin-code-push\hellocordova-build-extras.gradle' line: 32
@@ -327,12 +286,12 @@ Could not find method leftShift() for arguments [hellocordova_build_extras_s5knc
 > 这个问题一般是在安装cordova-plugin-code-push 之后build android时发生，原因是gradle中语法版本过高，找到报错的 `.gradle文件` 将 << 删除即可
 
 
-## 错误: 程序包com.example.chenyu不存在 import com.example.chenyu.R;
+### 错误: 程序包com.example.chenyu不存在 import com.example.chenyu.R;
 在安装cordova-plugin-gaodelocation-chenyu插件后 也会报错 ***.R 的问题
 这个问题找到 platforms/android/app/src/main/java/com/chenyu/GaoDeLocation/SerialLocation.java
 将第17行的 `import com.example.chenyu.R;` 改为当前项目包名（例如包名：io.cordova.hellocordova） `io.cordova.hellocordova.R;` 即可
 
-## duplicated Element meta-data#com.amap.api.v2.apikey at AndroidManifest.xml:16:9-109 duplicated with element declared at AndroidManifest.xml:15:9-109
+### duplicated Element meta-data#com.amap.api.v2.apikey at AndroidManifest.xml:16:9-109 duplicated with element declared at AndroidManifest.xml:15:9-109
 这种 报错信息包含 duplicated 和 AndroidManifest.xml的错误为 config.xml标签中定义的插件变量与已安装的插件中配置的变量不一致导致的变量重复添加至AndroidManifest.xml文件中
 解决：
 1. 可以将AndroidManifest.xml文件中定义重复的内容删除（删除前确认当前需要使用变量是哪个，且后续build会重新插入重复变量）
@@ -340,11 +299,67 @@ Could not find method leftShift() for arguments [hellocordova_build_extras_s5knc
 3. 或者找到 /platforms/android/android.json 这份文件中的变量值，修改与config.xml文件中插件使用的变量值一致（简单有效）
 > 统一以config.xml 文件中变量为准
 
-## [Error]  The uploaded package is identical to the contents of the specified deployment's current release.
+### [Error]  The uploaded package is identical to the contents of the specified deployment's current release.
 推送版本与当前版本一致
 
-## 错误: 找不到符号      AMapLocationClient.updatePrivacyShow(cordova.getContext(), true, true);
+### 错误: 找不到符号      AMapLocationClient.updatePrivacyShow(cordova.getContext(), true, true);
 原因是 cordova-plugin-gaodelocation-chenyu 与 com.plugin.wly.amaptrack
 两个插件使用的高德api版本不一致
 ![1673446797658](image/cordova/1673446797658.png)
 ![1673447783161](image/cordova/1673447783161.png)
+
+
+### tag mismatch
+dx.bat问题,一般出现在高版本sdk上
+找到报错的android sdk下build-tool 重命名d8.bat 为dx.bat 还有lib内的同名文件
+
+https://stackoverflow.com/questions/68387270/android-studio-error-installed-build-tools-revision-31-0-0-is-corrupted
+
+![1673610093996](image/cordova/1673610093996.png)
+
+### 关于使用打包机打包后app安装后打开空白的问题：
+插件加载问题，需要逐步调试
+
+### 不支持在file协议使用，请在http或https协议下使用！
+I/chromium: [INFO:CONSOLE(45)] "腾讯地图 JavaScript API 不支持在file协议使用，请在http或https协议下使用！", source: https://map.qq.com/api/gljs?v=1.exp&key=THKBZ-COO3O-XREWV-S3S5M-QCMWO-72BDM (45)
+
+方案一
+这类http问题是因为在cordova-android@9中 使用的是file协议打开的webview，升级platform->andorid@10以上就是https协议
+更换平台出现的新问题有：
+1. 符号 org.apache.cordova.Whitelist; 不存在  解决方式：需要在原先platform android@9中安装的Whitelist.java复制一份
+
+![1673618119824](image/cordova/1673618119824.png)
+
+2. "Mixed Content: The page at 'https://localhost/index.html' was loaded over HTTPS, but requested an insecure script 'http://api.tianditu.gov.cn/api?v=4.0&tk=2e97b3454ae50efd923c41f5fb4129d7'. [Mixed Content](##Mixed-Content)
+
+方案二：
+这两个测试后不行，在当前版本android@9中不可用 ，其他使用时都是将http转file用到此配置
+```xml
+<preference name="scheme" value="http" />
+<preference name="AndroidInsecureFileModeEnabled" value="false" />
+```
+
+方案三：
+继续使用andorid@9 使用webview插件修改file协议至http （当前使用）
+安装插件
+```shell
+cordova plugin add cordova-plugin-ionic-webview
+```
+当前安装版本为： "cordova-plugin-ionic-webview": "5.0.0"
+安装后即解决
+
+### Mixed Content
+
+摘抄自[cordova遇到的几个问题记录](https://zhuanlan.zhihu.com/p/539173572)
+```txt
+1、修改cordova默认的本地https服务为http服务。搜索工程代码中的SCHEME_HTTPS的值，从https修改为http。
+
+2、设置webview的属性，在SystemWebViewEngine.java文件的void initWebViewSettings()方法中添加如下属性设置：
+
+webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+经过以上的修改后，页面内容可以正常打开，可以正常访问网络了。
+```
+
+
+### java.io.IOException: Couldn't delete ***\platforms\android\app\build\outputs\apk\debug\output.json
+该情况为文件占用，关闭相关占用服务重新打包
