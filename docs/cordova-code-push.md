@@ -106,11 +106,11 @@ config.xml 中的version值 表示为当前打包安装后的app的版本
   * 此时运行 `code-push release-cordova dev_test android  --description="不指定-t config.xml version为3.2.12"` 会按照当前config.xml中version推送
 * 总结：【前提当时用热更新插件时】不要轻易修改config.xml中的version值，h5+cordova实现方式中通过在h5中定义自身版本标识
 * 留意：在使用不同version打包后，会生成一个version名称的文件在cordova项目中
-  * ![1673442715164](image/cordova-code-push/1673442715164.png)
-  <!-- * ![1673440683361](image/cordova-code-push/1673440683361.png)
+  * ![1673442715164](/image/cordova-code-push/1673442715164.png)
+  <!-- * ![1673440683361](/image/cordova-code-push/1673440683361.png)
   * 需要传入 targetBinaryVersion 才可以正常更新
   * `code-push release-cordova dev_test android -t 3.2.10 --description="推送给3.2.10的版本更新"`
-  * ![1673440933298](image/cordova-code-push/1673440933298.png) -->
+  * ![1673440933298](/image/cordova-code-push/1673440933298.png) -->
 
 
 ## 各版本对应热更新

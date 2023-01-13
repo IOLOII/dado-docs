@@ -81,12 +81,12 @@ AmapTrackPlugin-master
 
 ### 关于弃用该插件后的猎鹰功能解决方案
 > 调试过程：原插件中调试文件：AmapTrackPlugin.java 进行文件替换
-> image/AmapTrackPlugin.java =>
+> /image/AmapTrackPlugin.java =>
 > android/app/src/main/java/com/plugin/wly/amaptrack/AmapTrackPlugin/AmapTrackPlugin.java
-> >image/AmapTrackPlugin.java 在当前地址栏中输入并访问下载
+> >/image/AmapTrackPlugin.java 在当前地址栏中输入并访问下载
 
 原因：不能使用 无法走入回调
-![1673513435331](image/cordova/1673513435331.png)
+![1673513435331](/image/cordova/1673513435331.png)
 解决方案：使用android持续定位，将定位结果给到后端，后端通过web server服务调用创建猎鹰轨迹
 
 
@@ -149,7 +149,7 @@ android.permission.READ_EXTERNAL_STORAGE   访问您设备上的照片、媒体�
 Error: Could not find method leftShift() for arguments [dev_build_extras_bfw7hxbiphfvf2wlbp02s8oxb\$_run_closure1\$_closure4@455ef480] on task ':app:cdvCreateAssetManifest' of type org.gradle.api.DefaultTask.
 
 > https://blog.csdn.net/xiaopangcame/article/details/115543966
-![1672977879381](image/cordova/1672977879381.png)
+![1672977879381](/image/cordova/1672977879381.png)
 
 按照提示找到文件 接着找到line32 cdvCreateAssetManifest 这个任务 ，原因是其中写法是旧版 需要将 `<<` 箭头删除 即可
 
@@ -182,13 +182,13 @@ code-push  cordova-plugin-file-transfer  cordova-plugin-file  cordova-plugin-com
         }
     }
 ```
-![1672892156648](image/cordova/1672892156648.png)
+![1672892156648](/image/cordova/1672892156648.png)
 
 app/build.gradle中增加
 ```java
   multiDexEnabled true
 ```
-![1672892269035](image/cordova/1672892269035.png)
+![1672892269035](/image/cordova/1672892269035.png)
 
 ### UnhandledPromiseRejectionWarning
 环境：
@@ -205,7 +205,7 @@ cordova:8.0.0
 找到AndroidManifest.xml文件, application标签添加
 > android:usesCleartextTraffic="true"
 
-![1672926831580](image/cordova/1672926831580.png)
+![1672926831580](/image/cordova/1672926831580.png)
 
 参见：[networkerror](#networkerror)
 
@@ -254,9 +254,9 @@ demo: https://github.com/dpa99c/cordova-custom-config-example/blob/master/config
 
 ### build的时候 报错 AAPT: error: unbound prefix.
 命名空间
-![1673332568504](image/cordova/1673332568504.png)
+![1673332568504](/image/cordova/1673332568504.png)
 给config.xml添加 xmlns:android="http://schemas.android.com/apk/res/android"
-![1673332590110](image/cordova/1673332590110.png)
+![1673332590110](/image/cordova/1673332590110.png)
 
 
 ### android.useAndroidX
@@ -305,8 +305,8 @@ Could not find method leftShift() for arguments [hellocordova_build_extras_s5knc
 ### 错误: 找不到符号      AMapLocationClient.updatePrivacyShow(cordova.getContext(), true, true);
 原因是 cordova-plugin-gaodelocation-chenyu 与 com.plugin.wly.amaptrack
 两个插件使用的高德api版本不一致
-![1673446797658](image/cordova/1673446797658.png)
-![1673447783161](image/cordova/1673447783161.png)
+![1673446797658](/image/cordova/1673446797658.png)
+![1673447783161](/image/cordova/1673447783161.png)
 
 
 ### tag mismatch
@@ -315,7 +315,7 @@ dx.bat问题,一般出现在高版本sdk上
 
 https://stackoverflow.com/questions/68387270/android-studio-error-installed-build-tools-revision-31-0-0-is-corrupted
 
-![1673610093996](image/cordova/1673610093996.png)
+![1673610093996](/image/cordova/1673610093996.png)
 
 ### 关于使用打包机打包后app安装后打开空白的问题：
 插件加载问题，需要逐步调试
@@ -328,7 +328,7 @@ I/chromium: [INFO:CONSOLE(45)] "腾讯地图 JavaScript API 不支持在file协�
 更换平台出现的新问题有：
 1. 符号 org.apache.cordova.Whitelist; 不存在  解决方式：需要在原先platform android@9中安装的Whitelist.java复制一份
 
-![1673618119824](image/cordova/1673618119824.png)
+![1673618119824](/image/cordova/1673618119824.png)
 
 2. "Mixed Content: The page at 'https://localhost/index.html' was loaded over HTTPS, but requested an insecure script 'http://api.tianditu.gov.cn/api?v=4.0&tk=2e97b3454ae50efd923c41f5fb4129d7'. [Mixed Content](##Mixed-Content)
 
