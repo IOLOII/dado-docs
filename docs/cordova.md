@@ -363,3 +363,8 @@ webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
 
 ### java.io.IOException: Couldn't delete ***\platforms\android\app\build\outputs\apk\debug\output.json
 该情况为文件占用，关闭相关占用服务重新打包
+
+
+### public class FileProvider extends android.support.v4.content.FileProvider {}
+
+导入文件读取模块与现有版本不兼容，将 `android.support.v4.content.FileProvider` 替换为 `androidx.core.content.FileProvider`
