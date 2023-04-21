@@ -4,7 +4,7 @@ import { defaultTheme } from '@vuepress/theme-default'
 // import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 // import { searchPlugin } from '@vuepress/plugin-search'
 export default {
-  // base: '/log',
+  base: '/dado-docs',
   sidebar: false,
   // title: '123',
   // open:true,
@@ -84,6 +84,16 @@ export default {
           },
         ],
       },
+      {
+        text: 'About',
+        link: '',
+        children: [
+          {
+            text: 'Github Page',
+            link: 'https://ioloii.github.io/dado-docs/'
+          },
+        ]
+      }
     ],
   }),
   // bundler: viteBundler({
