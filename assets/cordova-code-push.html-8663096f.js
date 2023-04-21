@@ -1,4 +1,4 @@
-import{_ as a,p as e,q as n,a1 as s}from"./framework-96b046e1.js";const o="/image/cordova-code-push/1673442715164.png",t={},d=s(`<h1 id="code-push" tabindex="-1"><a class="header-anchor" href="#code-push" aria-hidden="true">#</a> code-push</h1><h2 id="配置热更新" tabindex="-1"><a class="header-anchor" href="#配置热更新" aria-hidden="true">#</a> 配置热更新：</h2><h3 id="当前文档中使用的环境" tabindex="-1"><a class="header-anchor" href="#当前文档中使用的环境" aria-hidden="true">#</a> 当前文档中使用的环境</h3><div class="language-code line-numbers-mode" data-ext="code"><pre class="language-code"><code>$ cordova -v
+import{_ as a,p as e,q as n,a1 as s}from"./framework-96b046e1.js";const o="/dado-docs/image/cordova-code-push/1673442715164.png",t={},d=s(`<h1 id="code-push" tabindex="-1"><a class="header-anchor" href="#code-push" aria-hidden="true">#</a> code-push</h1><h2 id="配置热更新" tabindex="-1"><a class="header-anchor" href="#配置热更新" aria-hidden="true">#</a> 配置热更新：</h2><h3 id="当前文档中使用的环境" tabindex="-1"><a class="header-anchor" href="#当前文档中使用的环境" aria-hidden="true">#</a> 当前文档中使用的环境</h3><div class="language-code line-numbers-mode" data-ext="code"><pre class="language-code"><code>$ cordova -v
 11.0.0
 
 $ npm -v
